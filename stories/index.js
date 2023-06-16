@@ -150,15 +150,6 @@ storiesOf("Button", module)
       />
     ));
 
-    
-
-  storiesOf("Appointment", module)
-  .addParameters({
-    backgrounds: [{ name: "white", value: "#fff", default: true }]
-  })
-  .add("Appointment", () => <Appointment />)
-        .add("Appointment with Time", () => <Appointment time="12pm" />);
-  
 
   storiesOf("Appointment", module)
   .addParameters({
@@ -166,46 +157,29 @@ storiesOf("Button", module)
   })
   .add("Appointment", () => <Appointment />)
   .add("Appointment with Time", () => <Appointment time="12pm" />)
-    .add("Header", () => <Appointment time="12pm" />);
-  
-
-storiesOf("Appointment", module)
-  .addParameters({
-    backgrounds: [{ name: "white", value: "#fff", default: true }]
-  })
-  .add("Empty", () => <Empty onAdd={action("onAdd")} />);
-
-
-storiesOf("Appointment", module)
-  .addParameters({
-    backgrounds: [{ name: "white", value: "#fff", default: true }]
-  })
-  .add("Show", () => <Show student="Lydia Miller-Jones" interviewer={interviewer} onEdit={action("onEdit")} onDelete={action("onDelete")} />);
-    
-
-storiesOf("Appointment", module)
-  .addParameters({
-    backgrounds: [{ name: "white", value: "#fff", default: true }]
-  })
-  .add("Confirm", () => <Confirm message="Are you sure you would like to delete?" onConfirm={action("onConfirm")} onCancel={action("onCancel")} />);
-
-
-storiesOf("Appointment", module)
-  .addParameters({
-    backgrounds: [{ name: "white", value: "#fff", default: true }]
-  })
-  .add("Status", () => <Status message="Deleting" />);
-
-
-storiesOf("Appointment", module)
-  .addParameters({
-    backgrounds: [{ name: "white", value: "#fff", default: true }]
-  })
-  .add("Error", () => <Error message="Could not delete appointment." onClose={action("onClose")} />);
-
-storiesOf("Appointment", module)
-  .addParameters({
-    backgrounds: [{ name: "white", value: "#fff", default: true }]
-  })
+  .add("Appointment", () => <Appointment />)
+  .add("Appointment with Time", () => <Appointment time="12pm" />)
+  .add("Header", () => <Appointment time="12pm" />)
+  .add("Empty", () => <Empty onAdd={action("onAdd")} />)
+  .add("Show", () => <Show student="Lydia Miller-Jones" interviewer={interviewer} onEdit={action("onEdit")} onDelete={action("onDelete")} />)
+  .add("Confirm", () => <Confirm message="Are you sure you would like to delete?" onConfirm={action("onConfirm")} onCancel={action("onCancel")} />)
+  .add("Status", () => <Status message="Deleting" />)
+  .add("Error", () => <Error message="Could not delete appointment." onClose={action("onClose")} />)
   .add("Edit", () => <Form name="Lydia Miller-Jones" interviewers={interviewers} interviewer={interviewer.id} onSave={action("onSave")} onCancel={action("onCancel")} />)
-  .add("Create", () => <Form interviewers={interviewers} onSave={action("onSave")} onCancel={action("onCancel")} />);
+  .add("Create", () => <Form interviewers={interviewers} onSave={action("onSave")} onCancel={action("onCancel")} />)
+  .add("Apointment Empty", () => (
+    <>
+      <Appointment id={1} time="4pm" />
+      <Appointment time="5pm" />
+    </>
+  ))
+  .add("Appointment Booked", () => (
+    <>
+      <Appointment
+        id={1}
+        time="4pm"
+        interview={{ student: "Lydia Miller-Jones", interviewer }}
+      />
+      <Appointment time="5pm" />
+    </>
+  ))
