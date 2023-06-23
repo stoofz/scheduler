@@ -1,3 +1,4 @@
+// Get appointments for day
 export function getAppointmentsForDay(state, value) {
   const filteredDay = state.days.filter(obj => obj.name === value);
   if(state.days.length === 0 || filteredDay.length === 0) {
@@ -17,6 +18,7 @@ export function getAppointmentsForDay(state, value) {
   return filteredAppointments;
 }
 
+// Get interview
 export function getInterview(state, interview) {
   if (!interview) {
     return null
@@ -30,4 +32,22 @@ export function getInterview(state, interview) {
 
   return filteredInterviews;
 
+}
+
+// Get interviewers for day
+export function getInterviewersForDay(state, value) {
+  const filteredDay = state.days.filter(obj => obj.name === value);
+  if (state.days.length === 0 || filteredDay.length === 0) {
+    return [];
+  }
+
+  const interviewersFromDay = filteredDay[0].interviewers;
+ 
+  const filteredInterviewers = [];
+ 
+  // Add all interviewers of day into aray
+  for (let interviewer of interviewersFromDay) {
+    filteredInterviewers.push(state.interviewers[interviewer]);
+  }
+  return filteredInterviewers;
 }
