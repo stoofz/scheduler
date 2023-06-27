@@ -11,11 +11,6 @@ export default function useApplicationData() {
   });
   
   const setDay = day => setState(prev => ({ ...prev, day }));
- // const setDays = days => setState(prev => ({ ...prev, days }));
-
-  // useEffect(() => {
-  //   axios.get("/api/days").then(response => setDays(response.data));
-  // }, []);
 
   useEffect(()=>{
     const dayURL = "/api/days";
@@ -30,9 +25,9 @@ export default function useApplicationData() {
     })
   },[]);
 
-
+  // Book interview by updating and adjusting avail spots
   function bookInterview(id, interview) {
-    console.log(id, interview);
+    //console.log(id, interview);
 
     const appointment = {
       ...state.appointments[id],
@@ -44,14 +39,15 @@ export default function useApplicationData() {
       [id]: appointment
     };
 
+
     const url =`/api/appointments/${id}`;
     return axios.put(url, appointment).then(() => {
+      availSpots();
       setState({...state, appointments});
     })
   }
 
-
-
+  // Delete interview by setting to null and adjust avail spots
   function cancelInterview(id){
     const appointment = {
       ...state.appointments[id],
@@ -63,15 +59,36 @@ export default function useApplicationData() {
     };
     const url =`/api/appointments/${id}`;
   
-    return axios.delete(url, appointment).then(()=>{
+    return axios.delete(url, appointment).then(() => {
+      availSpots("increase");
       setState({...state, appointments});
     });
   }
 
+  // Update available spots
+  const availSpots = (operation) => {
+    const currentDay = state.days.filter(day => day.name === state.day)[0];
+    const days = [...state.days];
+    if (operation === "incrase") {
+      currentDay.spots += 1;
+    } else currentDay.spots -= 1;
+
+    const updatedDay = days.map(day => {
+      if (day.id === currentDay.id) {
+        return { ...currentDay };
+      }
+      return day;
+    });
+
+    setState(prev => ({ ...prev, days: [...updatedDay] }));
+  };
+
+  
+  
   return {
     state,
     setDay,
     bookInterview,
-    cancelInterview
+    cancelInterview,
   }
 }
