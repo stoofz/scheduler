@@ -69,7 +69,7 @@ export default function useApplicationData() {
   const availSpots = (operation) => {
     const currentDay = state.days.filter(day => day.name === state.day)[0];
     const days = [...state.days];
-    if (operation === "incrase") {
+    if (operation === "increase") {
       currentDay.spots += 1;
     } else currentDay.spots -= 1;
 
@@ -89,6 +89,6 @@ export default function useApplicationData() {
     state,
     setDay,
     bookInterview,
-    cancelInterview,
+    cancelInterview
   }
 }
