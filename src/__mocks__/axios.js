@@ -81,12 +81,14 @@ export default {
         });
       }
     }),
-  put: jest.fn(url => {
+  put: jest.fn((url, interview) => {
       return Promise.resolve({
         status: 204,
         statusText: "No Content"
       })
-    }),
+  }),
+  
+  // Delete appointment, adjust spots remaining based on appointment id
   delete: jest.fn(url => {
       let dayOfWeek = null;
       const appointmentId = url.split("/").pop();
