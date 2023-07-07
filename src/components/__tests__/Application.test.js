@@ -49,7 +49,7 @@ describe("Application", () => {
   
 
 it('loads data, cancels an interview and increases the spots remaining for Monday by 1', async () => {
-  // Uncomment debug() at the bottom of this test for testing
+
   const { container, debug } = render(<Application />);
 
   await waitForElement(() => getByText(container, 'Archie Cohen'));
