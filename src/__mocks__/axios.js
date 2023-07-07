@@ -96,8 +96,8 @@ export default {
       else if (appointmentId === "3" || appointmentId === "4"){
             dayOfWeek = "Tuesday";
           }
-          const dayId = fixtures.days.findIndex(day => day.name === dayOfWeek);
-            fixtures.days[dayId].spots += 1;
+      const dayId = fixtures.days.findIndex(day => day.name === dayOfWeek);
+      fixtures.days[dayId].spots += 1;
       return Promise.resolve({
         status: 204,
         statusText: "No Content"
