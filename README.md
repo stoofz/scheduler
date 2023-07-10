@@ -4,25 +4,22 @@
 
 Scheduler is a Single Page Application(SPA) created for interview booking and management. This App allows users to add, edit, and delete appointments. It is Built using React and custom hooks. The client application communicates with an API server over HTTP via JSON. Data is stored using a PostgreSQL database. 
 
-
 ## Features
 
 - Appointments are displayed daily with their details
 - The days are shown in the sidebar with spots remaining
 - Users are able to book / edit / delete an appointment
 
-
 ## Screenshots
 
-### View appointments
+### View appointments by day
 !["View appointments"](/docs/view.PNG)
 
 ### Add or edit an appointment
 !["Add or Edit appointment"](/docs/add-edit.PNG)
 
-## Delete an appointment
+### Delete an appointment
 !["Delete appointment](/docs/delete.PNG)
-
 
 ## Setup
 
@@ -54,7 +51,6 @@ npm run storybook
 - React-dom ^16.9.0
 - React-scripts 3.4.4
 - React-testing-library ^8.0.1
-
 
 ## Dev Dependencies
 - Babel/core ^7.4.3
