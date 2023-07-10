@@ -13,7 +13,6 @@ export default function DayListItem(props) {
     } else {
       return `${spots} spots remaining`;
     }
-
   }
 
   const dayClass = classNames("day-list__item", {

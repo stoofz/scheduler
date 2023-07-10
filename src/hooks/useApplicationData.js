@@ -23,11 +23,10 @@ export default function useApplicationData() {
     ]).then((all) =>{
       setState(prev=>({...prev, days:all[0].data, appointments:all[1].data, interviewers:all[2].data}));
     })
-  },[]);
+  }, []);
 
   // Book interview by updating and adjusting avail spots
   function bookInterview(id, interview) {
-    //console.log(id, interview);
 
     const appointment = {
       ...state.appointments[id],
@@ -84,11 +83,10 @@ export default function useApplicationData() {
   };
 
   
-  
   return {
     state,
     setDay,
     bookInterview,
     cancelInterview
-  }
+  };
 }
