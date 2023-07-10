@@ -14,10 +14,13 @@ Scheduler is a Single Page Application(SPA) created for interview booking and ma
 
 ## Screenshots
 
+### View appointments
 !["View appointments"](/docs/view.PNG)
 
+### Add or edit an appointment
 !["Add or Edit appointment"](/docs/add-edit.PNG)
 
+## Delete an appointment
 !["Delete appointment](/docs/delete.PNG)
 
 
@@ -54,16 +57,16 @@ npm run storybook
 
 
 ## Dev Dependencies
-  Babel/core ^7.4.3
-  Storybook/addon-actions ^5.0.10
-  Storybook/addon-backgrounds ^5.0.10
-  Storybook/addon-links ^5.0.10
-  Storybook/addons ^5.0.10
-  Storybook/react ^5.0.10
-  Testing-library/jest-dom ^4.0.0
-  Testing-library/react ^8.0.9
-  Testing-library/react-hooks ^8.0.1
-  Babel-loader 8.1.0
-  Prop-types ^15.8.1
-  React-test-renderer ^16.9.0
-  Sass ^1.53.0
+- Babel/core ^7.4.3
+- Storybook/addon-actions ^5.0.10
+- Storybook/addon-backgrounds ^5.0.10
+- Storybook/addon-links ^5.0.10
+- Storybook/addons ^5.0.10
+- Storybook/react ^5.0.10
+- Testing-library/jest-dom ^4.0.0
+- Testing-library/react ^8.0.9
+- Testing-library/react-hooks ^8.0.1
+- Babel-loader 8.1.0
+- Prop-types ^15.8.1
+- React-test-renderer ^16.9.0
+- Sass ^1.53.0
