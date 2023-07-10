@@ -3,7 +3,7 @@ import "components/InterviewerList.scss";
 import PropTypes from 'prop-types';
 import InterviewerListItem from "components/InterviewerListItem";
 
-
+// Create InterviewerList
 export default function InterviewerList(props) {
 
   InterviewerList.propTypes = {

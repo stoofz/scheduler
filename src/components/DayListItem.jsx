@@ -3,6 +3,7 @@ import React from "react";
 import "components/DayListItem.scss";
 import classNames from "classnames";
 
+// Create DayListItem
 export default function DayListItem(props) {
 
   const formatSpots = function(spots) {
