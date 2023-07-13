@@ -28,6 +28,8 @@ export default function useApplicationData() {
   // Book interview by updating and adjusting avail spots
   function bookInterview(id, interview) {
 
+    const operation = !state.appointments[id].interview && "reduce";
+
     const appointment = {
       ...state.appointments[id],
       interview: { ...interview }
@@ -41,7 +43,7 @@ export default function useApplicationData() {
 
     const url =`/api/appointments/${id}`;
     return axios.put(url, appointment).then(() => {
-      availSpots();
+      availSpots(operation);
       setState({...state, appointments});
     })
   }
@@ -70,7 +72,11 @@ export default function useApplicationData() {
     const days = [...state.days];
     if (operation === "increase") {
       currentDay.spots += 1;
-    } else currentDay.spots -= 1;
+    }
+    
+    if (operation === "reduce") {
+      currentDay.spots -= 1;
+    }
 
     const updatedDay = days.map(day => {
       if (day.id === currentDay.id) {
