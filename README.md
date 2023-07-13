@@ -24,6 +24,7 @@ Scheduler is a Single Page Application(SPA) created for interview booking and ma
 ## Setup
 
 Install dependencies with `npm install`.
+Install schedular-api server. (Instructions below)
 
 ## Running Webpack Development Server
 
@@ -41,6 +42,16 @@ npm test
 
 ```sh
 npm run storybook
+```
+
+## Install and Run scheduler-api server
+
+Scheduler requires the scheduler-api database to be installed and running simultaneously.
+- Begin by forking and cloning the scheduler-api server from [here](https://github.com/lighthouse-labs/scheduler-api)
+- Follow the instructions in the scheduler-api README to install the database
+- Run the scheduler-api server from its folder
+```sh
+npm start
 ```
 
 ## Dependencies
